@@ -21,7 +21,7 @@ class form {
                         <td><input class="form_input" type="number" id="GHP.czas_realizacji" name="GHP.czas_realizacji" value="1"></td>
                     </tr>   
                 </table>
-                <button class="form_button center" type="submit">Pokaż tabele</button>
+                <button class="form_button center" type="submit">Show results</button>
             </form>`;
 
             parentElement.appendChild(contentBox)
