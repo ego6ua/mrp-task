@@ -17,8 +17,6 @@ class form {
                     <tr>
                         <td><label class="form_label" for="GHP.na_stanie">Na stanie: </label></td>
                         <td><input class="form_input" type="number" id="GHP.na_stanie" name="GHP.na_stanie" value="0"></td>
-                    </tr>
-                    <tr>
                         <td><label class="form_label" for="GHP.czas_realizacji">Czas realizacji: </label></td>
                         <td><input class="form_input" type="number" id="GHP.czas_realizacji" name="GHP.czas_realizacji" value="1"></td>
                     </tr>   

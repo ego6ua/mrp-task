@@ -4,21 +4,21 @@ Strona internetowa hostująca obecny stan implementacji:
 
 https://ego6ua.github.io/mrp-task/
 
-W ramach projektu przygotowujemy algorytm MRP dla przykładowego przedsiębiorstwa produkującego karmniki dla ptaków.
+W ramach projektu przygotowujemy algorytm MRP dla === przykładowego przedsiębiorstwa produkującego karmniki dla ptaków.
 
 Projekt zostanie wykonany w technologiach webowych (HTML CSS JAVASCRIPT)
 
 Wstępnym źródłem informacji dla algorytmu MRP jest GHP (Główny Harmonogram Produkcji), struktura produktu oraz stan zapasów
 Całkowite zapotrzebowanie pochodzi z GHP.
 
-![diagram drawio]
+![diagram ]
 
 
-Struktura karmnika jest podzielona na dwie główne części, podstawę i górną część.
+Struktura === karmnika jest podzielona na dwie główne części, podstawę i górną część.
 
-W skład podstawy wchodzą elementy, takie jak: filary (utrzymujące dach karmnika), noga (część, na której stoi cały karmnik) i podłoga (będąca podstawą karmnika, na której siadać będą ptaki).
+W skład === podstawy wchodzą elementy, takie jak: filary (utrzymujące dach karmnika), noga (część, na której stoi cały karmnik) i podłoga (będąca podstawą karmnika, na której siadać będą ptaki).
 
-Górna część zawiera dach oraz haczyki (na których zawieszane będą pojemniki z jedzeniem dla zwierząt).
+=== Górna część zawiera dach oraz haczyki (na których zawieszane będą pojemniki z jedzeniem dla zwierząt).
 
 W ramach GHP znajdujemy zapotrzebowanie brutto pozycji z poziomu 0.
 
