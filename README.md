@@ -2,7 +2,7 @@
 
 Strona internetowa hostująca obecny stan implementacji:
 
-http://v-ie.uek.krakow.pl/~s215676/mrp/
+https://ego6ua.github.io/mrp-task/
 
 W ramach projektu przygotowujemy algorytm MRP dla przykładowego przedsiębiorstwa produkującego karmniki dla ptaków.
 
@@ -11,7 +11,7 @@ Projekt zostanie wykonany w technologiach webowych (HTML CSS JAVASCRIPT)
 Wstępnym źródłem informacji dla algorytmu MRP jest GHP (Główny Harmonogram Produkcji), struktura produktu oraz stan zapasów
 Całkowite zapotrzebowanie pochodzi z GHP.
 
-![diagram drawio](https://user-images.githubusercontent.com/38815170/161923911-6de0c371-a428-4ecb-bb66-5f1bff18940a.png)
+![diagram drawio]
 
 
 Struktura karmnika jest podzielona na dwie główne części, podstawę i górną część.
