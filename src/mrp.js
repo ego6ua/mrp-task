@@ -28,23 +28,23 @@ class mrp{
         contentBox.classList.add("contentBox")
         parentElement.appendChild(contentBox)
         this.GHPTable = new table(contentBox, xBlocks, yBlocks, "GHP", this.GHP, this)
-        this.PodstawaTable = new table(contentBox, xBlocks, 7, "Podstawa", this.Podstawa, this)
-        this.GoraTable = new table(contentBox, xBlocks, 7, "Góra", this.Gora, this)
-        this.FilarTable = new table(contentBox, xBlocks, 7, "Filar", this.Filar, this)
-        this.NogaTable = new table(contentBox, xBlocks, 7, "Noga", this.Noga, this)
-        this.PodlogaTable = new table(contentBox, xBlocks, 7, "Podłoga", this.Podloga, this)
-        this.DachTable = new table(contentBox, xBlocks, 7, "Dach", this.Dach, this)
-        this.HaczykTable = new table(contentBox, xBlocks, 7, "Haczyk", this.Haczyk, this)
+        this.PodstawaTable = new table(contentBox, xBlocks, 7, "KORPUS", this.Podstawa, this)
+        this.GoraTable = new table(contentBox, xBlocks, 7, "GLÓWA DRONA", this.Gora, this)
+        this.FilarTable = new table(contentBox, xBlocks, 7, "ŚMIGŁO", this.Filar, this)
+        this.NogaTable = new table(contentBox, xBlocks, 7, "BATERIA", this.Noga, this)
+        this.PodlogaTable = new table(contentBox, xBlocks, 7, "JEDNOSTKA STERUJĄCA", this.Podloga, this)
+        this.DachTable = new table(contentBox, xBlocks, 7, "MIKROFON", this.Dach, this)
+        this.HaczykTable = new table(contentBox, xBlocks, 7, "KAMERA", this.Haczyk, this)
 
         this.tables = {
             "GHP": this.GHPTable,
-            "Podstawa": this.PodstawaTable,
-            "Góra": this.GoraTable,
-            "Filar": this.FilarTable,
-            "Noga": this.NogaTable,
-            "Podłoga": this.PodlogaTable,
-            "Dach": this.DachTable,
-            "Haczyk": this.HaczykTable
+            "KORPUS": this.PodstawaTable,
+            "GLÓWA DRONA": this.GoraTable,
+            "ŚMIGŁO": this.FilarTable,
+            "BATERIA": this.NogaTable,
+            "JEDNOSTKA STERUJĄCA": this.PodlogaTable,
+            "MIKROFON": this.DachTable,
+            "KAMERA": this.HaczykTable
         }
     
 
@@ -63,13 +63,13 @@ class mrp{
     loop(){
         this.updateAvailabilityInGHP()
         this.checkAfter("GHP", "1-3","1")
-        this.calcultateMRP("Podstawa", "GHP")
-        this.calcultateMRP("Góra", "GHP")
-        this.calcultateMRP("Filar", "Góra")
-        this.calcultateMRP("Noga", "Podstawa")
-        this.calcultateMRP("Podłoga", "Podstawa")
-        this.calcultateMRP("Dach", "Góra")
-        this.calcultateMRP("Haczyk", "Góra")
+        this.calcultateMRP("KORPUS", "GHP")
+        this.calcultateMRP("GLÓWA DRONA", "GHP")
+        this.calcultateMRP("ŚMIGŁO", "GLÓWA DRONA")
+        this.calcultateMRP("BATERIA", "KORPUS")
+        this.calcultateMRP("JEDNOSTKA STERUJĄCA", "KORPUS")
+        this.calcultateMRP("MIKROFON", "GLÓWA DRONA")
+        this.calcultateMRP("KAMERA", "GLÓWA DRONA")
     }
 
     updateAvailabilityInGHP() {
@@ -254,13 +254,13 @@ class mrp{
                 
             }
             this.write(this.getProductionBatch(this.currentCell.parent.name))
-            this.calcultateMRP("Podstawa", "GHP")
-            this.calcultateMRP("Góra", "GHP")
-            this.calcultateMRP("Filar", "Góra")
-            this.calcultateMRP("Noga", "Podstawa")
-            this.calcultateMRP("Podłoga", "Podstawa")
-            this.calcultateMRP("Dach", "Góra")
-            this.calcultateMRP("Haczyk", "Góra")
+            this.calcultateMRP("KORPUS", "GHP")
+            this.calcultateMRP("GLÓWA DRONA", "GHP")
+            this.calcultateMRP("ŚMIGŁO", "GLÓWA DRONA")
+            this.calcultateMRP("BATERIA", "KORPUS")
+            this.calcultateMRP("JEDNOSTKA STERUJĄCA", "KORPUS")
+            this.calcultateMRP("Dach", "GLÓWA DRONA")
+            this.calcultateMRP("KAMERA", "GLÓWA DRONA")
 
             var currentID = this.currentCell.id
             console.log(currentID)
@@ -279,8 +279,8 @@ class mrp{
                 
             }
             this.write(this.getProductionSize("GHP"))
-            this.updateProductionInTable("Podstawa", "GHP")
-            this.updateProductionInTable("Góra", "GHP")
+            this.updateProductionInTable("KORPUS", "GHP")
+            this.updateProductionInTable("GLÓWA DRONA", "GHP")
 
             var currentID = this.currentCell.id
             console.log(currentID)
@@ -386,9 +386,9 @@ class mrp{
     getProductionBatch(tableName) {
         var count = 0
         switch(tableName) {
-            case "Filar": count = 4;
+            case "ŚMIGŁO": count = 4;
                 break;
-            case "Haczyk": count = 2;
+            case "KAMERA": count = 2;
                 break;
             default: count = 1;
         }
@@ -402,9 +402,9 @@ class mrp{
         var table = this.tables[tableName]
         var count = 0
          switch(tableName) {
-             case "Filar": count = 4;
+             case "ŚMIGŁO": count = 4;
                  break;
-             case "Haczyk": count = 2;
+             case "KAMERA": count = 2;
                  break;
              default: count = 1;
          }
@@ -509,10 +509,10 @@ class mrp{
 
     updateGHP(){
         this.GHP = [
-            "Tydzień",
-            "Przewidywany Popyt",
-            "Produkcja",
-            "Dostępne",
+            "TYDZIEŃ",
+            "PRZEWIDYWANY POPYT",
+            "PRODUKCJA",
+            "DOSTĘPNE",
             {
                 "Czas realizacji": this.czas_realizacji,
                 "Na stanie":this.na_stanie
@@ -529,10 +529,10 @@ class mrp{
     }
 
     GHP = [
-        "tydzień: ",
-        "Przewidywany Popyt",
-        "Produkcja",
-        "Dostępne",
+        "TYDZIEŃ: ",
+        "PRZEWIDYWANY POPYT",
+        "PRODUKCJA",
+        "DOSTĘPNE",
         {
             "Czas realizacji": this.czas_realizacji,
             "Na stanie":this.na_stanie

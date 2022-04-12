@@ -9,15 +9,15 @@ class form {
 
             contentBox.innerHTML = 
             `<form action="" method="get" id="mrp">
-                <h2 class="form_h2">Przewidywany popyt</h2>
+                <h2 class="form_h2">PRZEWIDYWANY POPYT</h2>
                 <table id="popyt" class="formTable center">
                 </table>
-                <h2 class="form_h2">Dane produkcyjne</h2>
+                <h2 class="form_h2">DANE PRODUKCYJNE</h2>
                 <table class="formTable center">
                     <tr>
-                        <td><label class="form_label" for="GHP.na_stanie">Na stanie: </label></td>
+                        <td><label class="form_label" for="GHP.na_stanie">NA STANIE: </label></td>
                         <td><input class="form_input" type="number" id="GHP.na_stanie" name="GHP.na_stanie" value="0"></td>
-                        <td><label class="form_label" for="GHP.czas_realizacji">Czas realizacji: </label></td>
+                        <td><label class="form_label" for="GHP.czas_realizacji">CZAS REALIZACJI: </label></td>
                         <td><input class="form_input" type="number" id="GHP.czas_realizacji" name="GHP.czas_realizacji" value="1"></td>
                     </tr>   
                 </table>
@@ -38,9 +38,9 @@ class form {
         var table = document.getElementById("popyt")
         var tr = document.createElement('tr')
         tr.innerHTML =
-        `<td><label class="form_label" for="GHP.nr_tyg_`+this.popytId+`">Nr tygodnia: </label></td>
+        `<td><label class="form_label" for="GHP.nr_tyg_`+this.popytId+`">NR TYGODNIA: </label></td>
          <td><input class="form_input" type="number" id="GHP.nr_tyg_`+this.popytId+`" name="GHP.nr_tyg_`+this.popytId+`" value="0"></td>
-         <td><label class="form_label" for="GHP.ilosc_karmnikow_`+this.popytId+`">Ilość karmników: </label></td>
+         <td><label class="form_label" for="GHP.ilosc_karmnikow_`+this.popytId+`">ILOŚĆ DRONÓW: </label></td>
          <td><input class="form_input" type="number" id="GHP.ilosc_karmnikow_`+this.popytId+`" name="GHP.ilosc_karmnikow_`+this.popytId+`" value="0"></td>`
         table.appendChild(tr)
         document.getElementById("GHP.nr_tyg_"+ this.popytId).addEventListener("change", () => {
