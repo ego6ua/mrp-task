@@ -1,46 +1,121 @@
-# Getting Started with Create React App
+# mrp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Strona internetowa hostująca obecny stan implementacji:
 
-## Available Scripts
+http://v-ie.uek.krakow.pl/~s215676/mrp/
 
-In the project directory, you can run:
+W ramach projektu przygotowujemy algorytm MRP dla przykładowego przedsiębiorstwa produkującego karmniki dla ptaków.
 
-### `yarn start`
+Projekt zostanie wykonany w technologiach webowych (HTML CSS JAVASCRIPT)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Wstępnym źródłem informacji dla algorytmu MRP jest GHP (Główny Harmonogram Produkcji), struktura produktu oraz stan zapasów
+Całkowite zapotrzebowanie pochodzi z GHP.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![diagram drawio](https://user-images.githubusercontent.com/38815170/161923911-6de0c371-a428-4ecb-bb66-5f1bff18940a.png)
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Struktura karmnika jest podzielona na dwie główne części, podstawę i górną część.
 
-### `yarn build`
+W skład podstawy wchodzą elementy, takie jak: filary (utrzymujące dach karmnika), noga (część, na której stoi cały karmnik) i podłoga (będąca podstawą karmnika, na której siadać będą ptaki).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Górna część zawiera dach oraz haczyki (na których zawieszane będą pojemniki z jedzeniem dla zwierząt).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+W ramach GHP znajdujemy zapotrzebowanie brutto pozycji z poziomu 0.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Procedura MRP obejmuje ustalenie czasu rozpoczęcia produkcji tak, aby materiały zostały dostarczone w odpowiednim czasie.
+Zapotrzebowanie netto na materiały określonego poziomu zostaje przekstałcone na zapotrzebowanie brutto poziomu następnego, wśród połączonych ze sobą etapów. 
 
-### `yarn eject`
+Przykładowe przejście przez proces zostało zobrazowane na poniższych tabelach (w przykładzie następuje, popyt na 80 jednostek w 5 tygodniu oraz 30 jednostek w 7 tygodniu, z założeniem braku zapasu ukończonych karmników na stanie):
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+|***GHP***|||||||||||
+| - | - | - | - | - | - | - | - | - | - | - |
+|***tydzień:***|***1***|***2***|***3***|***4***|***5***|***6***|***7***|***8***|***9***|***10***|
+|***Przewidywany popyt***|||||***80***||***30***||||
+|***Produkcja***|||||***100***|***0***|***100***||||
+|***Dostępne***|***0***|***0***|***0***|***0***|***20***|***20***|***90***||||
+|***Czas realizacji = 1  Na stanie = 0***|||||||||||
+|||||||||||||
+|***Podstawa (założenie: wielkość partii 100)***|||||||||
+|***Okres  Dane produkcyjne***|***1***|***2***|***3***|***4***|***5***|***6***|||||
+|***Całkowite zapotrzebowanie***||||***100***||***100***|||||
+|***Planowane przyjęcia***|||||||||||
+|***Przewidywane na stanie***|***0***|***0***|***0***|***0***|***0***|***0***|||||
+|***Zapotrzebowanie netto***||||***100***||***100***|||||
+|***Planowane zamówienia***||***100***||***100***|||||||
+|***Planowane przyjęcie zamówień***||||***100***||***100***|||||
+|***Czas realizacji = 2  Wielkość partii = 100  Poziom BOM = 1  Na stanie = 0***||||||
+||||||||||||
+||||||||||||
+|***Góra (założenie: wielkość partii 100)***||||||||||
+|**Okres  Dane produkcyjne**|***1***|***2***|***3***|***4***|***5***|***6***|||||
+|**Całkowite zapotrzebowanie**||||***100***||***100***|||||
+|**Planowane przyjęcia**|||||||||||
+|**Przewidywane na stanie**|***0***|***0***|***0***|***0***|***0***|***0***|||||
+|**Zapotrzebowanie netto**||||***100***||***100***|||||
+|**Planowane zamówienia**||***100***||***100***|||||||
+|**Planowane przyjęcie zamówień**||||***100***||***100***|||||
+|**Czas realizacji = 2  Wielkość partii = 100  Poziom BOM = 1  Na stanie = 0**||||||
+||||||||||||
+||||||||||||
+||||||||||||
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+|***Filary (założenie: wielkość partii 400)***||||||||||
+| - | - | - | - | - | - | - | - | - | - |
+|***Okres  Dane produkcyjne***|***1***|***2***|***3***|***4***|***5***|***6***|||||
+|***Całkowite zapotrzebowanie***||***400***||***400***|||||||
+|***Planowane przyjęcia***|||||||||||
+|***Przewidywane na stanie***|***200***|***0***|***200***|***0***|***200***|***200***|||||
+|***Zapotrzebowanie netto***||***200***||***200***|||||||
+|***Planowane zamówienia***|***400***||***400***||||||||
+|***Planowane przyjęcie zamówień***||***400***||***400***|||||||
+|***Czas realizacji = 1  Wielkość partii = 400  Poziom BOM = 2  Na stanie = 200***||||||
+||||||||||||
+||||||||||||
+|***Noga (założenie: wielkość partii 200)***||||||||||
+|**Okres  Dane produkcyjne**|**1**|**2**|**3**|**4**|**5**|**6**|||||
+|**Całkowite zapotrzebowanie**||***100***||***100***|||||||
+|**Planowane przyjęcia**|||||||||||
+|**Przewidywane na stanie**|***0***|***0***|***100***|***0***|***0***|***0***|||||
+|**Zapotrzebowanie netto**||***100***|||||||||
+|**Planowane zamówienia**|***200***||||||||||
+|**Planowane przyjęcie zamówień**||***200***|||||||||
+|**Czas realizacji = 1  Wielkość partii = 200  Poziom BOM = 2  Na stanie = 0**||||||
+||||||||||||
+||||||||||||
+|**Podłogi (założenie: wielkość partii 150)**|||||||||
+|**Okres  Dane produkcyjne**|**1**|**2**|**3**|**4**|**5**|**6**|||||
+|**Całkowite zapotrzebowanie**||***100***||***100***|||||||
+|**Planowane przyjęcia**||***100***|||||||||
+|**Przewidywane na stanie**|***0***|***0***|***0***|***-100***|***50***|***50***|||||
+|**Zapotrzebowanie netto**||||***100***|||||||
+|**Planowane zamówienia**||***150***|||||||||
+|**Planowane przyjęcie zamówień**||||***150***|||||||
+|**Czas realizacji = 2  Wielkość partii = 150  Poziom BOM = 2  Na stanie = 0**||||||
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+||||||||||||
+| - | - | - | - | - | - | - | - | - | - | - |
+||||||||||||
+|***Dachy (założenie: wielkość partii 150)***||||||||||
+|**Okres  Dane produkcyjne**|**1**|**2**|**3**|**4**|**5**|**6**|||||
+|**Całkowite zapotrzebowanie**||***100***||***100***|||||||
+|**Planowane przyjęcia**||***100***|||||||||
+|**Przewidywane na stanie**||***0***|***0***|***0***|***50***|***50***|||||
+|**Zapotrzebowanie netto**||||***100***|||||||
+|**Planowane zamówienia**||***150***|||||||||
+|**Planowane przyjęcie zamówień**||||***150***|||||||
+|**Czas realizacji = 2  Wielkość partii = 150  Poziom BOM = 2  Na stanie = 0**||||||
+||||||||||||
+||||||||||||
+|**Haczyki (założenie: wielkość partii 500)**|||||||||
+|**Okres  Dane produkcyjne**|**1**|**2**|**3**|**4**|**5**|**6**|||||
+|**Całkowite zapotrzebowanie**||***200***||***200***|||||||
+|**Planowane przyjęcia**|||||||||||
+|**Przewidywane na stanie**||***300***|***300***|***300***|***100***|***100***|||||
+|**Zapotrzebowanie netto**||***200***|||||||||
+|**Planowane zamówienia**|***500***||||||||||
+|**Planowane przyjęcie zamówień**||***500***|||||||||
+|**Czas realizacji = 1  Wielkość partii = 500  Poziom BOM = 2  Na stanie = 0**||||||
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).

@@ -1,0 +1,167 @@
+.center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    background-color: #d8d8d8;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/*golovne menu - to sho w centri*/
+.contentBox {
+    margin: auto;
+    padding: 10px;
+    max-width: 1280px;
+}
+/*div для фотки зверху*/
+#karmniczek_obrazek {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px
+}
+
+/*golovne menu - tekst sho w centri*/
+.form_h2 {
+    text-align:center;
+    font-size: 26px;
+    letter-spacing: 4px;
+}
+/*golovne menu - tekst menshyj sho w centri*/
+.form_label {
+    font-size: 17px;
+    letter-spacing: 2.5px;
+}
+/*golovne menu - polya wpysuwanna sho w centri*/
+.form_input {
+    border-color: black;
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.form_button {
+    padding: 10px 16px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+    left: 45.5%;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form_button:hover {
+}
+.form_button:active {
+    transform: translateY(3px);
+}
+
+/* titles */
+.title{
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+/*golovne menu - tekst i miscya dla wpysuwanna w centri*/
+.formTable {
+    border-spacing: 15px;
+}
+
+.input_table {
+    padding: 8px 12px;
+    border-color: black;
+    border-radius: 12px;
+    width: 40%;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.mrpTable {
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    width: 800px;
+    height:70px;
+    background-color: #747474d3; 
+    border:black 1px solid;
+}
+.mrpTable:hover {
+    background-color: #5a5a5ad3; 
+}
+
+.table_header{
+    background-color: #747474d3; 
+}
+
+.mrpDescription{
+    text-align: left;
+    max-width: 800px;
+    margin-left: 1.5%;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 0;
+}
+
+.mrpDescription_text{
+    text-align: left;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 0.5%;
+}
+
+.mrpDescription_input{
+    padding: 8px 12px;
+    border: black 1px solid;
+    border-radius: 12px;
+    margin-left: 10px;
+    margin-right: 70%;
+    width: 70px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+/*golovne menu - authors*/
+#authors_bar {
+     
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    margin-top: 5%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    bottom: 0;
+}
+
+#authors_bar > div {
+    
+}
+
+#ptaszek_uwu {
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

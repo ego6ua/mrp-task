@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SI</title>
+    <link rel="stylesheet" href="src/style.css">
+    <script src="src/form.js"></script>
+    <script src="src/mrp.js"></script>
+    <script src="src/input.js"></script>
+    <script src="src/table.js"></script>
+    <script src="src/block.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            board = new form()
+            mrpForm  = document.getElementById('mrp');
+            mrpForm.addEventListener('submit', (event) => {
+                board = new mrp(
+                    "main", 
+                    ["placeholder"],
+                    "default", 
+                    getDemand(mrpForm),
+                    document.getElementById("GHP.na_stanie").value,
+                    document.getElementById("GHP.czas_realizacji").value)
+            });
+
+            function getDemand(mrpForm) {
+                var demand = {}
+                var i = 1
+                do {
+                    demand[document.getElementById("GHP.nr_tyg_"+i).value] = 
+                    document.getElementById("GHP.ilosc_karmnikow_"+i).value
+                    i++
+
+                 } while (document.getElementById("GHP.nr_tyg_"+i) 
+                 && document.getElementById("GHP.ilosc_karmnikow_"+i)
+                 && document.getElementById("GHP.nr_tyg_"+i).value != 0); 
+                return demand;
+            }
+        });
+        awareProduction = false
+        function flag(e){
+            console.log("flag changed")
+            awareProduction = !awareProduction
+            console.log(awareProduction)
+        }
+    </script>
+</head>
+<body>
+    
+    <div id="logo">
+        <img src="karmnik.jpg" id="karmniczek_obrazek">
+    </div>
+
+    <div id="main">
+
+    </div>
+
+    <div id="authors_bar">
+        <div>
+            <img src="birdie1.png" id="ptaszek_uwu">
+            <p>Ivan Kudybyn</p>
+        </div>
+        <div>
+            <img src="birdie1.png" id="ptaszek_uwu">
+            <p>Volodymyr Tymchyshyn</p>
+        </div>
+    </div>
+    
+</body>
+</html>
