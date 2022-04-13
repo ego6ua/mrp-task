@@ -40,13 +40,13 @@ class form {
         tr.innerHTML =
         `<td><label class="form_label" for="GHP.nr_tyg_`+this.popytId+`">NR TYGODNIA: </label></td>
          <td><input class="form_input" type="number" id="GHP.nr_tyg_`+this.popytId+`" name="GHP.nr_tyg_`+this.popytId+`" value="0"></td>
-         <td><label class="form_label" for="GHP.ilosc_karmnikow_`+this.popytId+`">ILOŚĆ DRONÓW: </label></td>
-         <td><input class="form_input" type="number" id="GHP.ilosc_karmnikow_`+this.popytId+`" name="GHP.ilosc_karmnikow_`+this.popytId+`" value="0"></td>`
+         <td><label class="form_label" for="GHP.ilosc_dronow_`+this.popytId+`">ILOŚĆ DRONÓW: </label></td>
+         <td><input class="form_input" type="number" id="GHP.ilosc_dronow_`+this.popytId+`" name="GHP.ilosc_dronow_`+this.popytId+`" value="0"></td>`
         table.appendChild(tr)
         document.getElementById("GHP.nr_tyg_"+ this.popytId).addEventListener("change", () => {
             this.firstChanged = true
         });
-        document.getElementById("GHP.ilosc_karmnikow_"+ this.popytId).addEventListener("change", () => {
+        document.getElementById("GHP.ilosc_dronow_"+ this.popytId).addEventListener("change", () => {
             if(this.firstChanged == true) this.addTableRow();
         });
     }       

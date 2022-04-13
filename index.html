@@ -30,11 +30,11 @@
                 var i = 1
                 do {
                     demand[document.getElementById("GHP.nr_tyg_"+i).value] = 
-                    document.getElementById("GHP.ilosc_karmnikow_"+i).value
+                    document.getElementById("GHP.ilosc_dronow_"+i).value
                     i++
 
                  } while (document.getElementById("GHP.nr_tyg_"+i) 
-                 && document.getElementById("GHP.ilosc_karmnikow_"+i)
+                 && document.getElementById("GHP.ilosc_dronow_"+i)
                  && document.getElementById("GHP.nr_tyg_"+i).value != 0); 
                 return demand;
             }
