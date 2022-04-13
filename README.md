@@ -2,7 +2,7 @@
 
 Strona internetowa hostująca obecny stan implementacji:
 
-https://ego6ua.github.io/mrp-task/
+https://ego6ua.github.io/mrp-task/ 
 
 W ramach projektu przygotowujemy algorytm MRP dla === przykładowego przedsiębiorstwa produkującego dronów.
 
