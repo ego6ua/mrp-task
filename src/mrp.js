@@ -28,23 +28,23 @@ class mrp{
         contentBox.classList.add("contentBox")
         parentElement.appendChild(contentBox)
         this.GHPTable = new table(contentBox, xBlocks, yBlocks, "GHP", this.GHP, this)
-        this.PodstawaTable = new table(contentBox, xBlocks, 7, "KORPUS", this.Podstawa, this)
-        this.GoraTable = new table(contentBox, xBlocks, 7, "GLÓWA DRONA", this.Gora, this)
-        this.FilarTable = new table(contentBox, xBlocks, 7, "ŚMIGŁO", this.Filar, this)
-        this.NogaTable = new table(contentBox, xBlocks, 7, "BATERIA", this.Noga, this)
-        this.PodlogaTable = new table(contentBox, xBlocks, 7, "JEDNOSTKA STERUJĄCA", this.Podloga, this)
-        this.DachTable = new table(contentBox, xBlocks, 7, "MIKROFON", this.Dach, this)
-        this.HaczykTable = new table(contentBox, xBlocks, 7, "KAMERA", this.Haczyk, this)
+        this.KorpusTable = new table(contentBox, xBlocks, 7, "KORPUS", this.Korpus, this)
+        this.GlowaTable = new table(contentBox, xBlocks, 7, "GLÓWA DRONA", this.Glowa, this)
+        this.SmigloTable = new table(contentBox, xBlocks, 7, "ŚMIGŁO", this.Smiglo, this)
+        this.BateriaTable = new table(contentBox, xBlocks, 7, "BATERIA", this.Bateria, this)
+        this.JednostkaTable = new table(contentBox, xBlocks, 7, "JEDNOSTKA STERUJĄCA", this.Jednostka, this)
+        this.MikrofonTable = new table(contentBox, xBlocks, 7, "MIKROFON", this.Mikrofon, this)
+        this.KameraTable = new table(contentBox, xBlocks, 7, "KAMERA", this.Kamera, this)
 
         this.tables = {
             "GHP": this.GHPTable,
-            "KORPUS": this.PodstawaTable,
-            "GLÓWA DRONA": this.GoraTable,
-            "ŚMIGŁO": this.FilarTable,
-            "BATERIA": this.NogaTable,
-            "JEDNOSTKA STERUJĄCA": this.PodlogaTable,
-            "MIKROFON": this.DachTable,
-            "KAMERA": this.HaczykTable
+            "KORPUS": this.KorpusTable,
+            "GLÓWA DRONA": this.GlowaTable,
+            "ŚMIGŁO": this.SmigloTable,
+            "BATERIA": this.BateriaTable,
+            "JEDNOSTKA STERUJĄCA": this.JednostkaTable,
+            "MIKROFON": this.MikrofonTable,
+            "KAMERA": this.KameraTable
         }
     
 
@@ -259,7 +259,7 @@ class mrp{
             this.calcultateMRP("ŚMIGŁO", "GLÓWA DRONA")
             this.calcultateMRP("BATERIA", "KORPUS")
             this.calcultateMRP("JEDNOSTKA STERUJĄCA", "KORPUS")
-            this.calcultateMRP("Dach", "GLÓWA DRONA")
+            this.calcultateMRP("MIKROFON", "GLÓWA DRONA")
             this.calcultateMRP("KAMERA", "GLÓWA DRONA")
 
             var currentID = this.currentCell.id
@@ -539,7 +539,7 @@ class mrp{
         }
     ]
     
-    Podstawa = [
+    Korpus = [
         "Okres <br> Dane Produkcyjne",
         "Całkowite zapotrzebowanie",
         "Planowane przyjęcia",
@@ -555,7 +555,7 @@ class mrp{
         }
     ]
 
-    Gora = [
+    Glowa = [
         "Okres <br> Dane Produkcyjne",
         "Całkowite zapotrzebowanie",
         "Planowane przyjęcia",
@@ -571,7 +571,7 @@ class mrp{
         }
     ]
 
-    Filar = [
+    Smiglo = [
         "Okres <br> Dane Produkcyjne",
         "Całkowite zapotrzebowanie",
         "Planowane przyjęcia",
@@ -587,7 +587,7 @@ class mrp{
         }
     ]
 
-    Noga = [
+    Bateria = [
         "Okres <br> Dane Produkcyjne",
         "Całkowite zapotrzebowanie",
         "Planowane przyjęcia",
@@ -603,7 +603,7 @@ class mrp{
         }
     ]
 
-    Podloga = [
+    Jednostka = [
         "Okres <br> Dane Produkcyjne",
         "Całkowite zapotrzebowanie",
         "Planowane przyjęcia",
@@ -619,7 +619,7 @@ class mrp{
         }
     ]
 
-    Dach = [
+    Mikrofon = [
         "Okres <br> Dane Produkcyjne",
         "Całkowite zapotrzebowanie",
         "Planowane przyjęcia",
@@ -635,7 +635,7 @@ class mrp{
         }
     ]
 
-    Haczyk = [
+    Kamera = [
         "Okres <br> Dane Produkcyjne",
         "Całkowite zapotrzebowanie",
         "Planowane przyjęcia",

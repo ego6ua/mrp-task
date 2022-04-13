@@ -104,8 +104,6 @@ class table{
             var description_text = Element(this.description, "label")
             description_text.setAttribute("type", "text")
             description_text.innerHTML = key
-            let localKey = key
-            console.log("Vova i Karol testing local key: ", key, localKey)
             description_text.classList.add("mrpDescription_text")
             var description_input = Element(this.description, "input")
             var uuname = this.name
