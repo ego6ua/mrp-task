@@ -108,7 +108,7 @@ class table{
             var value = this.schema[this.schema.length-1][key]
             this.description = Element(this.parent, "div")
             var description_text = Element(this.description, "label")
-            description_text.setAttribute("type", "text")
+            description_text.setAttribute("type", "text") 
             description_text.innerHTML = key
             let localKey = key
             console.log("Testing local key: ", key, localKey)

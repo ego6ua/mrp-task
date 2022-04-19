@@ -450,8 +450,8 @@ class mrp{
             console.log("To compare cellId:", i+"-"+demandRow, "value: ", this.gcv(tableName, i+"-"+demandRow))
             var popytValue = this.gcv(tableName, i+"-"+demandRow)
 
-            if(popytValue == 0){
-                
+            if(popytValue == 0){ 
+                 
             }else{
                 let subtracted = 0 
                 if (popytValue > this.read()){

@@ -19,7 +19,7 @@ class form {
                         <td><input class="form_input" type="number" id="GHP.na_stanie" name="GHP.na_stanie" value="0"></td>
                         <td><label class="form_label" for="GHP.czas_realizacji">CZAS REALIZACJI: </label></td>
                         <td><input class="form_input" type="number" id="GHP.czas_realizacji" name="GHP.czas_realizacji" value="1"></td>
-                    </tr>   
+                    </tr>    
                 </table>
                 <button class="form_button center" type="submit">Show results</button>
             </form>`;
