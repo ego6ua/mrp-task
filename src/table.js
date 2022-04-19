@@ -14,11 +14,17 @@ class table{
         
     }
 
+    renderTable(){
+        this.table.parentNode.removeChild(this.table)
+        this.initTable()
+    }
+
     initTable(){
         var hilariousState = this
         this.table = Element(this.parent,"table")
         for (let i = 0; i<this.ySize; i++){
             var row = Element(this.table, "tr")
+            this.content[this.schema[i]] = {}
             for (let j = 0; j<this.xSize; j++){
                 var cell = Element(row, "td")
                 cell.classList.add("mrpTable");
@@ -104,6 +110,8 @@ class table{
             var description_text = Element(this.description, "label")
             description_text.setAttribute("type", "text")
             description_text.innerHTML = key
+            let localKey = key
+            console.log("Testing local key: ", key, localKey)
             description_text.classList.add("mrpDescription_text")
             var description_input = Element(this.description, "input")
             var uuname = this.name
@@ -125,8 +133,10 @@ class table{
                 console.log("ardwark",reference[key])
                 reference.loop()
             })
+            
             description_input.classList.add("mrpDescription_input")
             this.description.classList.add("mrpDescription")
+            
         }
     }
 
