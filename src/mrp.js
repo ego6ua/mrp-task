@@ -19,8 +19,7 @@ class mrp{
         var yBlocks = 4
         this.productionListCells = []
         this.productionListAmount = []
-        var xCellSize = 80
-        var yCellSize = 30
+        
         var formContent = document.getElementById("form.contentBox")
         formContent.remove()
         var contentBox = document.createElement("div")
@@ -450,7 +449,9 @@ class mrp{
             console.log("To compare cellId:", i+"-"+demandRow, "value: ", this.gcv(tableName, i+"-"+demandRow))
             var popytValue = this.gcv(tableName, i+"-"+demandRow)
 
-            if(popytValue == 0){ 
+            if(popytValue == 0){
+              // TODO document why this block is empty
+             
                  
             }else{
                 let subtracted = 0 
@@ -549,9 +550,9 @@ class mrp{
         "Planowane przyjęcie zamówień",
         {
             "Czas realizacji" : 2,
-            "Wielkość partii" : 100,
+            "Wielkość partii" : 60,
             "Poziom BOM" : 1,
-            "Na stanie" : 0
+            "Na stanie" : 10
         }
     ]
 
@@ -565,7 +566,7 @@ class mrp{
         "Planowane przyjęcie zamówień",
         {
             "Czas realizacji" : 2,
-            "Wielkość partii" : 100,
+            "Wielkość partii" : 20,
             "Poziom BOM" : 1,
             "Na stanie" : 10
         }
@@ -581,9 +582,9 @@ class mrp{
         "Planowane przyjęcie zamówień",
         {
             "Czas realizacji" : 1,
-            "Wielkość partii" : 400,
+            "Wielkość partii" : 40,
             "Poziom BOM" : 2,
-            "Na stanie" : 10
+            "Na stanie" : 20
         }
     ]
 
@@ -597,7 +598,7 @@ class mrp{
         "Planowane przyjęcie zamówień",
         {
             "Czas realizacji" : 1,
-            "Wielkość partii" : 200,
+            "Wielkość partii" : 10,
             "Poziom BOM" : 2,
             "Na stanie" : 10
         }
@@ -613,7 +614,7 @@ class mrp{
         "Planowane przyjęcie zamówień",
         {
             "Czas realizacji" : 2,
-            "Wielkość partii" : 150,
+            "Wielkość partii" : 10,
             "Poziom BOM" : 1,
             "Na stanie" : 10
         }
@@ -629,9 +630,9 @@ class mrp{
         "Planowane przyjęcie zamówień",
         {
             "Czas realizacji" : 2,
-            "Wielkość partii" : 150,
+            "Wielkość partii" : 10,
             "Poziom BOM" : 2,
-            "Na stanie" : 0
+            "Na stanie" : 10
         }
     ]
 
@@ -645,7 +646,7 @@ class mrp{
         "Planowane przyjęcie zamówień",
         {
             "Czas realizacji" : 1,
-            "Wielkość partii" : 500,
+            "Wielkość partii" : 10,
             "Poziom BOM" : 2,
             "Na stanie" : 10
         }
@@ -662,7 +663,7 @@ class mrp{
         "Planowane przyjęcie zamówień",
         {
             "Czas realizacji" : 2,
-            "Wielkość partii" : 100,
+            "Wielkość partii" : 10,
             "Poziom BOM" : 1,
             "Na stanie" : 10
         }
